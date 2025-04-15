@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Play, Clock, Code, Link2, User, FastForward, Search, RefreshCw, ChevronRight, Shield, Server, CheckCircle, Lock } from 'lucide-react'
+import { Play, Clock, Code, Link2, User, FastForward, Search, RefreshCw, ChevronRight, Shield, Server, CheckCircle, Lock, MousePointer, ArrowRight } from 'lucide-react'
 import MainFeature from '../components/MainFeature'
 
 const Home = () => {
@@ -209,186 +209,72 @@ const Home = () => {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Record Once. AI Tests Everything.
+              4 Simple Clicks to Complete Test Automation
             </h2>
             <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary">
-              AutoTester combines human guidance with machine intelligence. Just use your app naturally—our AI handles the rest, creating comprehensive test suites that adapt to your changing application.
+              AutoTester transforms testing from a complex technical process to four simple clicks. Just use your app naturally while our AI does the heavy lifting.
             </p>
           </motion.div>
           
           <div className="mb-16">
-            <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-2xl overflow-hidden shadow-card">
-              <div className="border-b border-light-border-secondary dark:border-dark-border-primary">
-                <div className="flex">
-                  <button
-                    className={`px-6 py-4 font-medium text-sm ${
-                      activeTab === 'record' 
-                        ? 'border-b-2 border-primary text-primary' 
-                        : 'text-light-text-tertiary dark:text-dark-text-tertiary'
-                    }`}
-                    onClick={() => setActiveTab('record')}
-                  >
-                    1. RECORD
-                  </button>
-                  <button
-                    className={`px-6 py-4 font-medium text-sm ${
-                      activeTab === 'generate' 
-                        ? 'border-b-2 border-primary text-primary' 
-                        : 'text-light-text-tertiary dark:text-dark-text-tertiary'
-                    }`}
-                    onClick={() => setActiveTab('generate')}
-                  >
-                    2. GENERATE
-                  </button>
-                  <button
-                    className={`px-6 py-4 font-medium text-sm ${
-                      activeTab === 'optimize' 
-                        ? 'border-b-2 border-primary text-primary' 
-                        : 'text-light-text-tertiary dark:text-dark-text-tertiary'
-                    }`}
-                    onClick={() => setActiveTab('optimize')}
-                  >
-                    3. OPTIMIZE
-                  </button>
+            <img 
+              src="https://images.unsplash.com/photo-1557838429-06f38bdbd800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="AutoTester 4-step process"
+              className="w-full max-w-4xl mx-auto rounded-lg shadow-lg mb-12"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <motion.div 
+                variants={fadeIn}
+                className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
+              >
+                <div className="rounded-full bg-primary-light dark:bg-primary-dark h-10 w-10 flex items-center justify-center mb-4 mx-auto">
+                  <span className="font-bold text-primary">1</span>
                 </div>
-              </div>
+                <h3 className="text-lg font-bold mb-2">RECORD FLOW(S)</h3>
+                <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+                  Click "Record" and use your application naturally. No scripting. No special commands. Just authentic user interaction that takes minutes, not days.
+                </p>
+              </motion.div>
               
-              <div className="p-6">
-                {activeTab === 'record' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <h3 className="text-xl font-bold mb-4">ONE-CLICK RECORDING</h3>
-                      <p className="text-light-text-secondary dark:text-dark-text-secondary mb-6">
-                        Our browser extension captures every interaction as you use your application naturally. No scripting. No special actions. Just authentic user flows.
-                      </p>
-                      <div className="bg-light-bg-tertiary dark:bg-dark-bg-tertiary rounded-lg p-4 mb-4">
-                        <div className="flex items-center mb-2">
-                          <div className="h-3 w-3 rounded-full bg-success animate-pulse mr-2"></div>
-                          <span className="text-sm font-medium">Recording in progress...</span>
-                        </div>
-                        <div className="space-y-2 font-mono text-xs">
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Click: Login button</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Type: username@example.com in #email field</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Type: ******** in #password field</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Click: Submit button</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Recording user interactions" 
-                        className="rounded-lg shadow-lg"
-                      />
-                      <div className="absolute top-4 left-4 bg-primary text-white text-xs font-medium px-2 py-1 rounded">
-                        RECORDING
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                {activeTab === 'generate' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <h3 className="text-xl font-bold mb-4">AI SCENARIO GENERATION</h3>
-                      <p className="text-light-text-secondary dark:text-dark-text-secondary mb-6">
-                        Our AI analyzes your application and automatically suggests diverse test scenarios—happy paths, validation checks, boundary conditions, and error states.
-                      </p>
-                      <div className="bg-light-bg-tertiary dark:bg-dark-bg-tertiary rounded-lg p-4 mb-4">
-                        <div className="flex items-center mb-2">
-                          <div className="h-3 w-3 rounded-full bg-primary animate-pulse mr-2"></div>
-                          <span className="text-sm font-medium">AI generating test scenarios...</span>
-                        </div>
-                        <div className="space-y-2 font-mono text-xs">
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Happy Path: Successful login</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Validation: Empty email field</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Validation: Invalid email format</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-primary mr-2">⟳</span>
-                            <span>Error State: Incorrect password...</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                        alt="AI generating test scenarios" 
-                        className="rounded-lg shadow-lg"
-                      />
-                      <div className="absolute top-4 left-4 bg-primary text-white text-xs font-medium px-2 py-1 rounded">
-                        AI ANALYSIS
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                {activeTab === 'optimize' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <h3 className="text-xl font-bold mb-4">SMART FLOW OPTIMIZATION</h3>
-                      <p className="text-light-text-secondary dark:text-dark-text-secondary mb-6">
-                        Confirmed scenarios transform into efficient, reusable test flows that self-heal when your UI changes—delivered in both human-readable and machine-executable formats.
-                      </p>
-                      <div className="bg-light-bg-tertiary dark:bg-dark-bg-tertiary rounded-lg p-4 mb-4">
-                        <div className="flex items-center mb-2">
-                          <div className="h-3 w-3 rounded-full bg-success mr-2"></div>
-                          <span className="text-sm font-medium">Test flows optimized</span>
-                        </div>
-                        <div className="space-y-2 font-mono text-xs">
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Redundant steps removed: 4</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Self-healing selectors enabled</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Test coverage: 94%</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-success mr-2">✓</span>
-                            <span>Ready for execution</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Smart flow optimization" 
-                        className="rounded-lg shadow-lg"
-                      />
-                      <div className="absolute top-4 left-4 bg-success text-white text-xs font-medium px-2 py-1 rounded">
-                        OPTIMIZED
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <motion.div 
+                variants={fadeIn}
+                className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
+              >
+                <div className="rounded-full bg-primary-light dark:bg-primary-dark h-10 w-10 flex items-center justify-center mb-4 mx-auto">
+                  <span className="font-bold text-primary">2</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2">GENERATE TEST CASES WITH AI</h3>
+                <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+                  One click and our AI analyzes your recordings to automatically create comprehensive test scenarios—including edge cases you might never think to test.
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                variants={fadeIn}
+                className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
+              >
+                <div className="rounded-full bg-primary-light dark:bg-primary-dark h-10 w-10 flex items-center justify-center mb-4 mx-auto">
+                  <span className="font-bold text-primary">3</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2">GENERATE STEPS WITH AI</h3>
+                <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+                  Another click and AutoTester transforms each test case into detailed, executable steps that adapt to your changing application.
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                variants={fadeIn}
+                className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
+              >
+                <div className="rounded-full bg-primary-light dark:bg-primary-dark h-10 w-10 flex items-center justify-center mb-4 mx-auto">
+                  <span className="font-bold text-primary">4</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2">RUN TESTS TO FIND BUGS</h3>
+                <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+                  Click "Go" to execute your tests and receive detailed reports of any issues—all without writing a single line of code.
+                </p>
+              </motion.div>
             </div>
           </div>
           
@@ -427,11 +313,11 @@ const Home = () => {
               className="dark:card-neu-dark card-neu-light"
             >
               <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-6">
-                <User className="h-6 w-6 text-primary dark:text-dark-text-primary" />
+                <MousePointer className="h-6 w-6 text-primary dark:text-dark-text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">ANYONE CAN CREATE TESTS</h3>
+              <h3 className="text-xl font-bold mb-4">FOUR CLICKS, ZERO CODE</h3>
               <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                No coding required. Product managers, designers, and non-technical team members can build professional-grade test suites.
+                No programming skills needed. Anyone on your team can create professional test suites with just four simple clicks.
               </p>
             </motion.div>
             
@@ -442,9 +328,9 @@ const Home = () => {
               <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-6">
                 <FastForward className="h-6 w-6 text-primary dark:text-dark-text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">CUT TESTING TIME BY 80%</h3>
+              <h3 className="text-xl font-bold mb-4">COMPLETE TESTING IN MINUTES</h3>
               <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                What took days now takes minutes. Create, run, and analyze comprehensive tests in a fraction of the time.
+                What took days now takes 15 minutes for initial setup and 5-15 minutes for subsequent runs. From manual days to automated minutes.
               </p>
             </motion.div>
             
@@ -455,9 +341,9 @@ const Home = () => {
               <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-6">
                 <Search className="h-6 w-6 text-primary dark:text-dark-text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-4">DISCOVER MISSED EDGE CASES</h3>
+              <h3 className="text-xl font-bold mb-4">AI FINDS EDGE CASES HUMANS MISS</h3>
               <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                Our AI identifies boundary conditions and error states that human testers typically overlook, reducing escaped defects by 63%.
+                As shown in our example, AutoTester automatically generates tests for validation errors, empty fields, and success states—reducing escaped defects by 63%.
               </p>
             </motion.div>
             
@@ -521,80 +407,62 @@ const Home = () => {
               See AutoTester In Action
             </h2>
           </motion.div>
-          
+
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="max-w-4xl mx-auto mb-12"
+            className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-8 max-w-4xl mx-auto mb-12"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-video cursor-pointer group">
-              <img 
-                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="AutoTester demo video" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity group-hover:opacity-75">
-                <div className="h-20 w-20 rounded-full bg-primary/90 flex items-center justify-center">
-                  <Play className="h-10 w-10 text-white" fill="white" />
-                </div>
-              </div>
+            <img 
+              src="https://images.unsplash.com/photo-1573167507387-6b4b98cb7c13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="AutoTester interface showing multiple test cases"
+              className="w-full rounded-lg shadow-lg mb-8"
+            />
+
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-center">AI AUTOMATICALLY FINDS EDGE CASES YOU'D MISS</h3>
+              <p className="text-light-text-secondary dark:text-dark-text-secondary mb-6">
+                Look at the real example above. For a simple signup form, AutoTester automatically generated comprehensive test cases:
+              </p>
+
+              <ol className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm font-bold mr-3 flex-shrink-0">1</span>
+                  <span>Testing valid email submission and verification</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm font-bold mr-3 flex-shrink-0">2</span>
+                  <span>Testing invalid email format validation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm font-bold mr-3 flex-shrink-0">3</span>
+                  <span>Testing required field validation when the email is empty</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm font-bold mr-3 flex-shrink-0">4</span>
+                  <span>Testing user redirection after successful signup</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm font-bold mr-3 flex-shrink-0">5</span>
+                  <span>Testing confirmation email delivery</span>
+                </li>
+              </ol>
+
+              <p className="font-medium text-center italic">All generated automatically without a single line of code.</p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+              <button className="btn-secondary flex items-center justify-center">
+                <Play className="h-4 w-4 mr-2" />
+                Watch 2-Minute Demo
+              </button>
+              <a href="#try-it-now" className="btn-primary">
+                TRY IT ON YOUR APP →
+              </a>
             </div>
           </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
-          >
-            <motion.div 
-              variants={fadeIn}
-              className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
-            >
-              <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-4 mx-auto">
-                <Play className="h-6 w-6 text-primary dark:text-dark-text-primary" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">INTUITIVE RECORDING</h3>
-              <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                Watch how AutoTester captures your natural app interactions without special commands or scripting.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              variants={fadeIn}
-              className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
-            >
-              <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-4 mx-auto">
-                <Search className="h-6 w-6 text-primary dark:text-dark-text-primary" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">AI ANALYSIS & GENERATION</h3>
-              <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                See our AI identify elements, understand workflows, and generate comprehensive test scenarios.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              variants={fadeIn}
-              className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-lg p-6 text-center"
-            >
-              <div className="rounded-full bg-primary-light dark:bg-primary-dark h-12 w-12 flex items-center justify-center mb-4 mx-auto">
-                <CheckCircle className="h-6 w-6 text-primary dark:text-dark-text-primary" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">EXECUTION & REPORTING</h3>
-              <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                Experience the seamless execution and detailed reporting that pinpoints exactly what needs fixing.
-              </p>
-            </motion.div>
-          </motion.div>
-          
-          <div className="text-center">
-            <a href="#try-it-now" className="btn-primary">
-              TRY IT ON YOUR APP →
-            </a>
-          </div>
         </div>
       </section>
       
@@ -637,40 +505,40 @@ const Home = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Test Creation Time</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Days</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Hours</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Minutes</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Test Creation Process</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Write detailed steps</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Write complex code</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Just use your app</td>
+                </tr>
+                <tr>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Time Per Feature</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">1-2 Days</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">4-8 Hours</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">15 Minutes</td>
                 </tr>
                 <tr>
                   <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Technical Skills Required</td>
                   <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Medium</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">High</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">None</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">High (Coding)</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">None (4 Clicks)</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Maintenance Effort</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">High</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Very High</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Minimal</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Edge Case Identification</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Manual planning</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Manual coding</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">AI-Generated</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Edge Case Coverage</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Limited</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Moderate</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Comprehensive</td>
-                </tr>
-                <tr>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">UI Change Resilience</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">None</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Low</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Maintenance When UI Changes</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Rewrite tests</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Debug code</td>
                   <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Self-Healing</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Learning Curve</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Steep</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Very Steep</td>
-                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Use Immediately</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary font-medium">Required Team</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">QA specialists</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center">Developers</td>
+                  <td className="p-4 border-b border-light-border-secondary dark:border-dark-border-primary text-center bg-primary-light/20 dark:bg-primary-dark/20 font-medium text-primary">Anyone</td>
                 </tr>
               </tbody>
             </table>
@@ -967,7 +835,7 @@ const Home = () => {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                  <span>Unlimited users</span>
+                  <span className="font-medium">Unlimited users</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
@@ -1025,11 +893,34 @@ const Home = () => {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start Testing Smarter Today
+              4 Clicks to Revolutionize Your Testing
             </h2>
             <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-8">
-              Join the companies that have eliminated testing bottlenecks, accelerated releases, and improved product quality—all while cutting costs.
+              Stop writing test scripts. Stop maintaining brittle tests. Stop missing release deadlines.
+              Start clicking. Start saving 90% of your testing time and cost. Start shipping faster.
             </p>
+            
+            <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary p-4 rounded-lg mb-8 flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <div className="rounded-full bg-primary text-white h-6 w-6 flex items-center justify-center text-xs font-bold">1</div>
+                <span className="text-sm">Record flow(s)</span>
+              </div>
+              <ArrowRight className="h-4 w-4 text-light-text-tertiary dark:text-dark-text-tertiary" />
+              <div className="flex items-center space-x-2">
+                <div className="rounded-full bg-primary text-white h-6 w-6 flex items-center justify-center text-xs font-bold">2</div>
+                <span className="text-sm">Generate test cases with AI</span>
+              </div>
+              <ArrowRight className="h-4 w-4 text-light-text-tertiary dark:text-dark-text-tertiary" />
+              <div className="flex items-center space-x-2">
+                <div className="rounded-full bg-primary text-white h-6 w-6 flex items-center justify-center text-xs font-bold">3</div>
+                <span className="text-sm">Generate steps with AI</span>
+              </div>
+              <ArrowRight className="h-4 w-4 text-light-text-tertiary dark:text-dark-text-tertiary" />
+              <div className="flex items-center space-x-2">
+                <div className="rounded-full bg-primary text-white h-6 w-6 flex items-center justify-center text-xs font-bold">4</div>
+                <span className="text-sm">Run tests to find bugs</span>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a 
@@ -1040,9 +931,10 @@ const Home = () => {
               </a>
               <a 
                 href="#demo" 
-                className="btn-secondary"
+                className="btn-secondary flex items-center justify-center"
               >
-                SCHEDULE DEMO
+                <Play className="h-4 w-4 mr-2" />
+                SEE 2-MINUTE DEMO
               </a>
               <a 
                 href="#pricing" 
